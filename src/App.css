@@ -17,6 +17,19 @@ body{
   overflow: hidden;
 }
 
+.highlight{
+  background-color: yellow;
+  cursor: pointer;
+}
+
+.flex-start{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
 /* Fading animation */
 .fade {
   -webkit-animation-name: fade;
@@ -42,6 +55,8 @@ body{
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      z-index: 2;
+      overflow: visible;
   }
 
   .phoneText{
@@ -161,6 +176,9 @@ body{
       background: white;
       padding: 1em;
       text-align: start;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
       font-weight: 700;
       font-size: 1em;
       border-radius: .8em;
@@ -168,6 +186,7 @@ body{
       display: none;
       position: absolute;
       transform: translate(10.5em, 1em);
+      z-index: 10;
   }
     
   .sb1:before {
@@ -181,6 +200,32 @@ body{
       border-bottom: 10px solid transparent;
       left: -19px;
       top: 6px;
+  }
+
+  .sb2:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 10px solid white;
+    border-right: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid white;
+    left: 0px;
+    top: -10px;
+  }
+
+  .sb3:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 10px solid transparent;
+    border-right: 10px solid white;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid white;
+    right: 0px;
+    top: -10px;
   }
 
   .success-checkmark:after {
@@ -279,7 +324,62 @@ body{
 
   .question-option:hover{
     cursor: pointer;
-}
+  }
+
+  .popup-image{
+    width: 8em;
+    height: auto;
+  }
+
+  #s1{
+    width: 10em;
+    transform: translate(1em, 9em);
+  }
+
+  #s2{
+    width: 13em;
+    transform: translate(-5em, 9em);
+  }
+
+  #s3{
+    width: 8em;
+    transform: translate(0em, 10em);
+  }
+
+  #s4{
+    width: 8em;
+    transform: translate(-6em, 11em);
+  }
+
+  #s5{
+    width: 8em;
+    transform: translate(-1em, 10.5em);
+  }
+
+  #s6{
+    width: 8em;
+    transform: translate(2em, 9em);
+  }
+
+  #s7{
+    width: 8em;
+    transform: translate(-1em, 9em);
+  }
+
+  #s8{
+    width: 8em;
+    transform: translate(-1em, 8.5em);
+  }
+
+  #s9{
+    width: 8em;
+    transform: translate(2em, 8em);
+  }
+
+  #s10{
+    width: 8em;
+    transform: translate(-1em, 8em);
+  }
 
 }
 @media only screen and (min-width:641px) and (orientation: landscape)  { 
@@ -337,6 +437,8 @@ body{
   .text-container{
       flex-basis: 40%;
       width: 10em;
+      justify-content: flex-start;
+      align-items: flex-start;
   }
 
   p{
@@ -373,6 +475,60 @@ body{
 
   .question{
       font-size: 1.3em;
+  }
+
+  .popup-image{
+    width: 7em;
+  }
+
+  #s1{
+    width: 8em;
+    transform: translate(1em, 5.5em);
+  }
+
+  #s2{
+    width: 10em;
+    transform: translate(-5em, 5.5em);
+  }
+
+  #s3{
+    width: 10em;
+    transform: translate(5em, 4em);
+  }
+
+  #s4{
+    width: 10em;
+    transform: translate(-6em, 6em);
+  }
+
+  #s5{
+    width: 8em;
+    transform: translate(4em, 4em);
+  }
+
+  #s6{
+    width: 8em;
+    transform: translate(2em, 5.5em);
+  }
+
+  #s7{
+    width: 8em;
+    transform: translate(6em, 6em);
+  }
+
+  #s8{
+    width: 8em;
+    transform: translate(3em, 4em);
+  }
+
+  #s9{
+    width: 8em;
+    transform: translate(2em, 5.5em);
+  }
+
+  #s10{
+    width: 8em;
+    transform: translate(4em, 4em);
   }
 }
 @media only screen and (min-width:961px)  { 
@@ -463,9 +619,67 @@ body{
   .question-box{
     margin: 7px 0 7px 0;
   }
+
+  .popup-image{
+    width: 8em;
+  }
+
+  #s1{
+    width: 8em;
+    transform: translate(1em, 5.5em);
+  }
+
+  #s2{
+    width: 10em;
+    transform: translate(-1em, 3.5em);
+  }
+
+  #s3{
+    width: 8em;
+    transform: translate(5em, 4em);
+  }
+
+  #s4{
+    width: 8em;
+    transform: translate(-8em, 7em);
+  }
+
+  #s5{
+    width: 8em;
+    transform: translate(4em, 3.5em);
+  }
+
+  #s6{
+    width: 8em;
+    transform: translate(8em, 4em);
+  }
+
+  #s7{
+    width: 8em;
+    transform: translate(6em, 5.5em);
+  }
+
+  #s8{
+    width: 8em;
+    transform: translate(3em, 4em);
+  }
+
+  #s9{
+    width: 8em;
+    transform: translate(0.5em, 5em);
+  }
+
+  #s10{
+    width: 8em;
+    transform: translate(4em, 4em);
+  }
 }
 @media only screen and (min-width: 1025px) {
   /* big landscape tablets, laptops, and desktops */
+  .slideshow-container{
+    overflow-x: hidden;
+  }
+
   .title{
       font-size: 3.5em;
   }  
@@ -565,6 +779,59 @@ body{
   .question-box{
     margin: 7px 0 7px 0;
   }
+  .popup-image{
+    width: 5em;
+  }
+
+  #s1{
+    width: 8em;
+    transform: translate(6em, 4em);
+  }
+
+  #s2{
+    width: 10em;
+    transform: translate(-1em, 3.5em);
+  }
+
+  #s3{
+    width: 8em;
+    transform: translate(3em, 3.5em);
+  }
+
+  #s4{
+    width: 8em;
+    transform: translate(2em, 5.5em);
+  }
+
+  #s5{
+    width: 8em;
+    transform: translate(2em, 3.5em);
+  }
+
+  #s6{
+    width: 8em;
+    transform: translate(6em, 3.5em);
+  }
+
+  #s7{
+    width: 8em;
+    transform: translate(2em, 5em);
+  }
+
+  #s8{
+    width: 8em;
+    transform: translate(3em, 3.5em);
+  }
+
+  #s9{
+    width: 8em;
+    transform: translate(8em, 3.5em);
+  }
+
+  #s10{
+    width: 8em;
+    transform: translate(2em, 3.5em);
+  }
   
 }
 @media only screen and (min-width:1440px) { 
@@ -624,7 +891,7 @@ body{
       padding: 1em;
       font-weight: 700;
       font-size: 2em;
-      transform: translate(15em, -4em);
+      transform: translate(15em, -4em);      
   }
     
   .arrow-container{

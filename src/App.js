@@ -15,6 +15,17 @@ import avatar from "./images/Avatar.png";
 import pause from "./images/pause.png";
 import play from "./images/play.png";
 import audioClip from "./sounds/Media1.mp3";
+import introClip from "./sounds/Media2.mp3";
+import s1 from "./images/s1.jpg";
+import s2 from "./images/s2.jpg";
+import s3 from "./images/s3.jpg";
+import s4 from "./images/s4.jpg";
+import s5 from "./images/s5.jpg";
+import s6 from "./images/s6.jpg";
+import s7 from "./images/s7.jpg";
+import s8 from "./images/s8.jpg";
+import s9 from "./images/s9.jpg";
+import s10 from "./images/s10.jpg";
 
 
 var slideIndex = 1;
@@ -49,7 +60,7 @@ export class App extends Component {
       if(slideIndex == 1){
           document.getElementById("pageNum").innerHTML = "";
       }
-      document.getElementById("n").style.display = "none";
+      //document.getElementById("n").style.display = "none";
       if(slideIndex >= 3){
           document.getElementById("p").style.display = "block";
       }
@@ -62,16 +73,20 @@ export class App extends Component {
   toggle(id){
     if(document.getElementById(id)){
       var text = document.getElementById(id).style.display;
-      if(text == "block"){
+      if(text == "flex"){
           document.getElementById(id).style.display = "none";
       }
       else{
-          document.getElementById(id).style.display = "block";
+          document.getElementById(id).style.display = "flex";
       }
     }
   }
 
   show(id){
+    if(id == "intro"){
+      var intro = document.getElementById("intro-sound");
+      intro.play();
+    }
     if(document.getElementById(id)){
       document.getElementById(id).style.display = "block";
     }
@@ -85,7 +100,6 @@ export class App extends Component {
 
   showNext(){
     if(document.getElementById("n")){
-      console.log("Hello");
       document.getElementById("n").style.display = "block";
     }
   }
@@ -145,6 +159,9 @@ export class App extends Component {
                         <div className="avatar-container">
                             <img className="avatar" src={avatar}/>
                         </div>
+                        <audio id="intro-sound">
+                            <source src={introClip} type="audio/mpeg" />
+                        </audio>
                         <div id="intro" className="speech sb1">
                             Aujourd’hui, tu vas lire l’histoire « Les enfants de cire. » Sélectionnez la flèche pour passer à la page suivante.
                             <span className="success-checkmark" onClick={() => {this.showNext(); this.hide('intro');}}></span>
@@ -170,9 +187,14 @@ export class App extends Component {
 
 
                     <div className="text-container">
-                        <p>Il y a une famille bien heureuse. Ils ne se disputent jamais.
-                            <span className="success-checkmark" onClick={this.showNext}></span>
-                        </p>
+                        <p>Il y a une famille bien heureuse. <span className="highlight" onClick={() => this.toggle('s1')}>Ils ne se disputent</span> jamais.</p>
+                        <div id="s1" className="speech sb2">
+                          ils se disputent signifie : ils se battent
+                          <img className="popup-image" src={s1}/>
+                          <div className='flex-start'>
+                            <span className="success-checkmark" onClick={() => {this.showNext(); this.hide('s1');}}></span>
+                          </div>
+                        </div>
                     </div>
                 </div>
                 {/* Slide 2 */}
@@ -186,9 +208,14 @@ export class App extends Component {
 
 
                     <div className="text-container">
-                        <p>Ils aident leurs parents à la maison et dans les champs. 
-                            <span className="success-checkmark" onClick={this.showNext}></span>
-                        </p>
+                        <p>Ils aident leurs parents à la maison et dans <span className="highlight" onClick={() => this.toggle('s2')}>les champs.</span></p>
+                        <div id="s2" className="speech sb3">
+                          les champs signifie: un grand morceau de terre pour faire pousser des plantes <br/>
+                          <img className="popup-image" src={s2}/>
+                          <div className='flex-start'>
+                            <span className="success-checkmark" onClick={() => {this.showNext(); this.hide('s2');}}></span>
+                          </div>
+                        </div>
                     </div>
                 </div>
                 {/* Slide 3 */}
@@ -202,9 +229,15 @@ export class App extends Component {
 
 
                     <div className="text-container">
-                        <p>Mais ils n’ont pas le droit de s’approcher d’un feu.
-                            <span className="success-checkmark" onClick={this.showNext}></span>
+                        <p>Mais ils n’ont pas le droit de <span className="highlight" onClick={() => this.toggle('s3')}>s’approcher</span> d’un feu.
                         </p>
+                        <div id="s3" className="speech sb2">
+                          s’approcher signifie : aller plus près <br/>
+                          <img className="popup-image" src={s3}/>
+                          <div className='flex-start'>
+                            <span className="success-checkmark" onClick={() => {this.showNext(); this.hide('s3');}}></span>
+                          </div>
+                        </div>
                     </div>
                 </div>
                 {/* Slide 4 */}
@@ -218,28 +251,18 @@ export class App extends Component {
 
 
                     <div className="text-container">
-                        <p>Ils doivent faire tout leur travail pendant la nuit. Puisqu’ils sont faits de cire! Mais un des garçons désire se promener au soleil.
-                            <span className="success-checkmark" onClick={this.showNext}></span>
+                        <p>Ils doivent faire tout leur travail pendant la nuit. Puisqu’ils sont faits <span className="highlight" onClick={() => this.toggle('s4')}>de cire!</span> Mais un des garçons désire se promener au soleil.
                         </p>
+                        <div id="s4" className="speech sb3">
+                          de cire signifie : une chandelle est faite de cire <br/>
+                          <img className="popup-image" src={s4}/>
+                          <div className='flex-start'>
+                            <span className="success-checkmark" onClick={() => {this.showNext(); this.hide('s4');}}></span>
+                          </div>
+                        </div>
                     </div>
                 </div>
                 {/* Slide 5 */}
-                <div className="slide fade">
-                    <div className="image-container">
-                        <img className="image" src={image06}/>
-                        <div className="avatar-container">
-                            <img className="avatar" src={avatar}/>
-                        </div>
-                    </div>
-
-
-                    <div className="text-container">
-                        <p>Un jour son désir est trop puissant. Ses frères l’avertissent… 
-                            <span className="success-checkmark" onClick={this.showNext}></span>
-                        </p>
-                    </div>
-                </div>
-                {/* Slide 6 */}
                 <div className="slide fade">
                     <div className="image-container">
                         <img className="image" src={image07}/>
@@ -250,12 +273,18 @@ export class App extends Component {
 
 
                     <div className="text-container">
-                        <p>Mais c’est trop tard! Il fond au soleil brûlant.
-                            <span className="success-checkmark" onClick={this.showNext}></span>
+                        <p>Un jour son désir est trop <span className="highlight" onClick={() => this.toggle('s5')}>puissant.</span> Ses frères l’avertissent… 
                         </p>
+                        <div id="s5" className="speech sb2">
+                          puissant signifie: fort  <br/>
+                          <img className="popup-image" src={s5}/>
+                          <div className='flex-start'>
+                            <span className="success-checkmark" onClick={() => {this.showNext(); this.hide('s5');}}></span>
+                          </div>
+                        </div>
                     </div>
                 </div>
-                {/* Slide 7 */}
+                {/* Slide 6 */}
                 <div className="slide fade">
                     <div className="image-container">
                         <img className="image" src={image08}/>
@@ -266,12 +295,18 @@ export class App extends Component {
 
 
                     <div className="text-container">
-                        <p>Les enfants de cire sont si tristes de voir leur frère fondre.
-                            <span className="success-checkmark" onClick={this.showNext}></span>
+                        <p>Mais c’est trop tard! Il fond au soleil <span className="highlight" onClick={() => this.toggle('s6')}>brûlant.</span>
                         </p>
+                        <div id="s6" className="speech sb2">
+                          brûlant signifie: très chaud <br/>
+                          <img className="popup-image" src={s6}/>
+                          <div className='flex-start'>
+                            <span className="success-checkmark" onClick={() => {this.showNext(); this.hide('s6');}}></span>
+                          </div>
+                        </div>
                     </div>
                 </div>
-                {/* Slide 8 */}
+                {/* Slide 7 */}
                 <div className="slide fade">
                     <div className="image-container">
                         <img className="image" src={image09}/>
@@ -282,12 +317,18 @@ export class App extends Component {
 
 
                     <div className="text-container">
-                        <p>Mais ils font un plan. Ils façonnent le morceau de cire fondue en oiseau.
-                            <span className="success-checkmark" onClick={this.showNext}></span>
+                        <p>Les enfants de cire sont si tristes de voir leur frère <span className="highlight" onClick={() => this.toggle('s7')}>fondre.</span>
                         </p>
+                        <div id="s7" className="speech sb2">
+                          fondre signifie: devenir  liquide <br/>
+                          <img className="popup-image" src={s7}/>
+                          <div className='flex-start'>
+                            <span className="success-checkmark" onClick={() => {this.showNext(); this.hide('s7');}}></span>
+                          </div>
+                        </div>
                     </div>
                 </div>
-                {/* Slide 9 */}
+                {/* Slide 8 */}
                 <div className="slide fade">
                     <div className="image-container">
                         <img className="image" src={image10}/>
@@ -298,13 +339,18 @@ export class App extends Component {
 
 
                     <div className="text-container">
-                        <p>Ils apportent leur frère l’oiseau jusqu’au sommet d’une montagne haute.
-                            <span className="success-checkmark" onClick={this.showNext}></span>
-
+                        <p>Mais ils font un plan. Ils <span className="highlight" onClick={() => this.toggle('s8')}>façonnent</span> le morceau de cire fondue en oiseau.
                         </p>
+                        <div id="s8" className="speech sb2">
+                          ils façonnent signifie: ils fabriquent <br/>
+                          <img className="popup-image" src={s8}/>
+                          <div className='flex-start'>
+                            <span className="success-checkmark" onClick={() => {this.showNext(); this.hide('s8');}}></span>
+                          </div>
+                        </div>
                     </div>
                 </div>
-                {/* Slide 10 */}
+                {/* Slide 9 */}
                 <div className="slide fade">
                     <div className="image-container">
                         <img className="image" src={image11}/>
@@ -315,9 +361,37 @@ export class App extends Component {
 
 
                     <div className="text-container">
-                        <p>Et lorsque le soleil se lève, il s’envole vers la lumière du matin en chantant.
-                            <span className="success-checkmark" onClick={this.showNext}></span>
+                        <p>Ils apportent leur frère l’oiseau jusqu’<span className="highlight" onClick={() => this.toggle('s9')}>au sommet d’</span>une montagne haute.
                         </p>
+                        <div id="s9" className="speech sb2">
+                          au sommet de signifie : en haut de <br/>
+                          <img className="popup-image" src={s9}/>
+                          <div className='flex-start'>
+                            <span className="success-checkmark" onClick={() => {this.showNext(); this.hide('s9');}}></span>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                {/* Slide 10 */}
+                <div className="slide fade">
+                    <div className="image-container">
+                        <img className="image" src={image01}/>
+                        <div className="avatar-container">
+                            <img className="avatar" src={avatar}/>
+                        </div>
+                    </div>
+
+
+                    <div className="text-container">
+                        <p>Et lorsque le soleil se lève, <span className="highlight" onClick={() => this.toggle('s10')}>il s’envole</span> vers la lumière du matin en chantant.
+                        </p>
+                        <div id="s10" className="speech sb2">
+                          il s’envole signifie: il prend son vol<br/>
+                          <img className="popup-image" src={s10}/>
+                          <div className='flex-start'>
+                            <span className="success-checkmark" onClick={() => {this.showNext(); this.hide('s10');}}></span>
+                          </div>
+                        </div>
                     </div>
                 </div>
                 {/* Question Slide Intro */}
