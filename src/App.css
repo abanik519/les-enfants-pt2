@@ -24,10 +24,11 @@ body{
 
 .flex-start{
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
   width: 100%;
+  height: 100%;
 }
 
 /* Fading animation */
@@ -162,7 +163,7 @@ body{
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-direction: row;
+      flex-direction: column;
       text-align: start;
   }
 
@@ -187,6 +188,22 @@ body{
       position: absolute;
       transform: translate(10.5em, 1em);
       z-index: 10;
+  }
+
+  .speech2{
+    width: fit-content;
+    background: white;
+    padding: 1em;
+    text-align: start;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-weight: 700;
+    font-size: 1em;
+    border-radius: .8em;
+    color: black;
+    display: none;
+    z-index: 10;
   }
     
   .sb1:before {
@@ -330,57 +347,6 @@ body{
     width: 8em;
     height: auto;
   }
-
-  #s1{
-    width: 10em;
-    transform: translate(1em, 9em);
-  }
-
-  #s2{
-    width: 13em;
-    transform: translate(-5em, 9em);
-  }
-
-  #s3{
-    width: 8em;
-    transform: translate(0em, 10em);
-  }
-
-  #s4{
-    width: 8em;
-    transform: translate(-6em, 11em);
-  }
-
-  #s5{
-    width: 8em;
-    transform: translate(-1em, 10.5em);
-  }
-
-  #s6{
-    width: 8em;
-    transform: translate(2em, 9em);
-  }
-
-  #s7{
-    width: 8em;
-    transform: translate(-1em, 9em);
-  }
-
-  #s8{
-    width: 8em;
-    transform: translate(-1em, 8.5em);
-  }
-
-  #s9{
-    width: 8em;
-    transform: translate(2em, 8em);
-  }
-
-  #s10{
-    width: 8em;
-    transform: translate(-1em, 8em);
-  }
-
 }
 @media only screen and (min-width:641px) and (orientation: landscape)  { 
   /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
@@ -452,6 +418,13 @@ body{
       font-size: 1em;
       transform: translate(11.5em, -2em);
   }
+
+  .speech2{
+    width: 12em;
+    padding: 1em;
+    font-weight: 700;
+    font-size: 1em;
+  }
     
   .arrow-container{
       flex-basis: 10%;
@@ -478,58 +451,9 @@ body{
   }
 
   .popup-image{
-    width: 7em;
-  }
-
-  #s1{
     width: 8em;
-    transform: translate(1em, 5.5em);
   }
 
-  #s2{
-    width: 10em;
-    transform: translate(-5em, 5.5em);
-  }
-
-  #s3{
-    width: 10em;
-    transform: translate(5em, 4em);
-  }
-
-  #s4{
-    width: 10em;
-    transform: translate(-6em, 6em);
-  }
-
-  #s5{
-    width: 8em;
-    transform: translate(4em, 4em);
-  }
-
-  #s6{
-    width: 8em;
-    transform: translate(2em, 5.5em);
-  }
-
-  #s7{
-    width: 8em;
-    transform: translate(6em, 6em);
-  }
-
-  #s8{
-    width: 8em;
-    transform: translate(3em, 4em);
-  }
-
-  #s9{
-    width: 8em;
-    transform: translate(2em, 5.5em);
-  }
-
-  #s10{
-    width: 8em;
-    transform: translate(4em, 4em);
-  }
 }
 @media only screen and (min-width:961px)  { 
   /* tablet, landscape iPad, lo-res laptops ands desktops */ 
@@ -591,6 +515,13 @@ body{
       font-size: 1.4em;
       transform: translate(11em, 0em);
   }
+
+  .speech2{
+    width: 14em;
+    padding: 1em;
+    font-weight: 700;
+    font-size: 1.4em;
+  }
     
   .arrow-container{
       width: 8em;
@@ -621,58 +552,9 @@ body{
   }
 
   .popup-image{
-    width: 8em;
+    width: 9em;
   }
 
-  #s1{
-    width: 8em;
-    transform: translate(1em, 5.5em);
-  }
-
-  #s2{
-    width: 10em;
-    transform: translate(-1em, 3.5em);
-  }
-
-  #s3{
-    width: 8em;
-    transform: translate(5em, 4em);
-  }
-
-  #s4{
-    width: 8em;
-    transform: translate(-8em, 7em);
-  }
-
-  #s5{
-    width: 8em;
-    transform: translate(4em, 3.5em);
-  }
-
-  #s6{
-    width: 8em;
-    transform: translate(8em, 4em);
-  }
-
-  #s7{
-    width: 8em;
-    transform: translate(6em, 5.5em);
-  }
-
-  #s8{
-    width: 8em;
-    transform: translate(3em, 4em);
-  }
-
-  #s9{
-    width: 8em;
-    transform: translate(0.5em, 5em);
-  }
-
-  #s10{
-    width: 8em;
-    transform: translate(4em, 4em);
-  }
 }
 @media only screen and (min-width: 1025px) {
   /* big landscape tablets, laptops, and desktops */
@@ -738,6 +620,13 @@ body{
       transform: translate(11em, .5em);
   }
 
+  .speech2{
+    width: 14em;
+    padding: 1em;
+    font-weight: 700;
+    font-size: 1.6em;
+  }
+
   .sb1:before {
       content: "";
       width: 0px;
@@ -780,58 +669,9 @@ body{
     margin: 7px 0 7px 0;
   }
   .popup-image{
-    width: 5em;
-  }
-
-  #s1{
     width: 8em;
-    transform: translate(6em, 4em);
   }
 
-  #s2{
-    width: 10em;
-    transform: translate(-1em, 3.5em);
-  }
-
-  #s3{
-    width: 8em;
-    transform: translate(3em, 3.5em);
-  }
-
-  #s4{
-    width: 8em;
-    transform: translate(2em, 5.5em);
-  }
-
-  #s5{
-    width: 8em;
-    transform: translate(2em, 3.5em);
-  }
-
-  #s6{
-    width: 8em;
-    transform: translate(6em, 3.5em);
-  }
-
-  #s7{
-    width: 8em;
-    transform: translate(2em, 5em);
-  }
-
-  #s8{
-    width: 8em;
-    transform: translate(3em, 3.5em);
-  }
-
-  #s9{
-    width: 8em;
-    transform: translate(8em, 3.5em);
-  }
-
-  #s10{
-    width: 8em;
-    transform: translate(2em, 3.5em);
-  }
   
 }
 @media only screen and (min-width:1440px) { 

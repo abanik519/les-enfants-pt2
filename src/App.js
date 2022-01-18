@@ -188,7 +188,7 @@ export class App extends Component {
 
                     <div className="text-container">
                         <p>Il y a une famille bien heureuse. <span className="highlight" onClick={() => this.toggle('s1')}>Ils ne se disputent</span> jamais.</p>
-                        <div id="s1" className="speech sb2">
+                        <div id="s1" className="speech2">
                           ils se disputent signifie : ils se battent
                           <img className="popup-image" src={s1}/>
                           <div className='flex-start'>
@@ -209,7 +209,7 @@ export class App extends Component {
 
                     <div className="text-container">
                         <p>Ils aident leurs parents à la maison et dans <span className="highlight" onClick={() => this.toggle('s2')}>les champs.</span></p>
-                        <div id="s2" className="speech sb3">
+                        <div id="s2" className="speech2">
                           les champs signifie: un grand morceau de terre pour faire pousser des plantes <br/>
                           <img className="popup-image" src={s2}/>
                           <div className='flex-start'>
@@ -231,7 +231,7 @@ export class App extends Component {
                     <div className="text-container">
                         <p>Mais ils n’ont pas le droit de <span className="highlight" onClick={() => this.toggle('s3')}>s’approcher</span> d’un feu.
                         </p>
-                        <div id="s3" className="speech sb2">
+                        <div id="s3" className="speech2">
                           s’approcher signifie : aller plus près <br/>
                           <img className="popup-image" src={s3}/>
                           <div className='flex-start'>
@@ -253,7 +253,7 @@ export class App extends Component {
                     <div className="text-container">
                         <p>Ils doivent faire tout leur travail pendant la nuit. Puisqu’ils sont faits <span className="highlight" onClick={() => this.toggle('s4')}>de cire!</span> Mais un des garçons désire se promener au soleil.
                         </p>
-                        <div id="s4" className="speech sb3">
+                        <div id="s4" className="speech2">
                           de cire signifie : une chandelle est faite de cire <br/>
                           <img className="popup-image" src={s4}/>
                           <div className='flex-start'>
@@ -275,7 +275,7 @@ export class App extends Component {
                     <div className="text-container">
                         <p>Un jour son désir est trop <span className="highlight" onClick={() => this.toggle('s5')}>puissant.</span> Ses frères l’avertissent… 
                         </p>
-                        <div id="s5" className="speech sb2">
+                        <div id="s5" className="speech2">
                           puissant signifie: fort  <br/>
                           <img className="popup-image" src={s5}/>
                           <div className='flex-start'>
@@ -297,7 +297,7 @@ export class App extends Component {
                     <div className="text-container">
                         <p>Mais c’est trop tard! Il fond au soleil <span className="highlight" onClick={() => this.toggle('s6')}>brûlant.</span>
                         </p>
-                        <div id="s6" className="speech sb2">
+                        <div id="s6" className="speech2">
                           brûlant signifie: très chaud <br/>
                           <img className="popup-image" src={s6}/>
                           <div className='flex-start'>
@@ -319,7 +319,7 @@ export class App extends Component {
                     <div className="text-container">
                         <p>Les enfants de cire sont si tristes de voir leur frère <span className="highlight" onClick={() => this.toggle('s7')}>fondre.</span>
                         </p>
-                        <div id="s7" className="speech sb2">
+                        <div id="s7" className="speech2">
                           fondre signifie: devenir  liquide <br/>
                           <img className="popup-image" src={s7}/>
                           <div className='flex-start'>
@@ -341,7 +341,7 @@ export class App extends Component {
                     <div className="text-container">
                         <p>Mais ils font un plan. Ils <span className="highlight" onClick={() => this.toggle('s8')}>façonnent</span> le morceau de cire fondue en oiseau.
                         </p>
-                        <div id="s8" className="speech sb2">
+                        <div id="s8" className="speech2">
                           ils façonnent signifie: ils fabriquent <br/>
                           <img className="popup-image" src={s8}/>
                           <div className='flex-start'>
@@ -363,7 +363,7 @@ export class App extends Component {
                     <div className="text-container">
                         <p>Ils apportent leur frère l’oiseau jusqu’<span className="highlight" onClick={() => this.toggle('s9')}>au sommet d’</span>une montagne haute.
                         </p>
-                        <div id="s9" className="speech sb2">
+                        <div id="s9" className="speech2">
                           au sommet de signifie : en haut de <br/>
                           <img className="popup-image" src={s9}/>
                           <div className='flex-start'>
@@ -385,7 +385,7 @@ export class App extends Component {
                     <div className="text-container">
                         <p>Et lorsque le soleil se lève, <span className="highlight" onClick={() => this.toggle('s10')}>il s’envole</span> vers la lumière du matin en chantant.
                         </p>
-                        <div id="s10" className="speech sb2">
+                        <div id="s10" className="speech2">
                           il s’envole signifie: il prend son vol<br/>
                           <img className="popup-image" src={s10}/>
                           <div className='flex-start'>
