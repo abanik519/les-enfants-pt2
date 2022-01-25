@@ -1,6 +1,6 @@
 @font-face {
   font-family: "mainText";
-  src: url("COMIC.TTF");
+  src: url("Century\ Gothic.ttf");
 }
 
 body{
@@ -18,8 +18,7 @@ body{
 }
 
 .highlight{
-  background-color: yellow;
-  cursor: pointer;
+  background-color: lightgray;
 }
 
 .flex-start{
@@ -30,6 +29,18 @@ body{
   width: 100%;
   height: 100%;
 }
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-arrow-left {
+    -webkit-animation: bounceLeft 2s infinite;
+    animation: bounceLeft 2s infinite;
+  }
 
 /* Fading animation */
 .fade {
@@ -49,8 +60,64 @@ body{
   to {opacity: 1}
 }
 
+/* Bouncing animation */
+@-webkit-keyframes bounceLeft {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    40% {
+      -webkit-transform: translateX(30px);
+      transform: translateX(30px);
+    }
+    60% {
+      -webkit-transform: translateX(15px);
+      transform: translateX(15px);
+    }
+  }
+  @-moz-keyframes bounceLeft {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateX(0);
+    }
+    40% {
+      transform: translateX(30px);
+    }
+    60% {
+      transform: translateX(15px);
+    }
+  }
+  @keyframes bounceLeft {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      -ms-transform: translateX(0);
+      transform: translateX(0);
+    }
+    40% {
+      -ms-transform: translateX(30px);
+      transform: translateX(30px);
+    }
+    60% {
+      -ms-transform: translateX(15px);
+      transform: translateX(15px);
+    }
+  }
+
 @media only screen and (min-width:641px) {
   /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
+  .fa-arrow-left{
+      font-size: 1.2em;
+  }
   .slideshow-container{
       display: flex;
       flex-direction: column;
@@ -78,7 +145,7 @@ body{
       padding: 10px 0 10px 0;
       text-align: center;
       text-decoration: overline underline gray;
-      transform: translateY(5em);
+      margin: 1em;
   }  
 
   .slide-container{
@@ -93,17 +160,18 @@ body{
       display: none;
       flex-basis: 80%;
       width: 20em;
-      height: 45em;
+      height: 20em;
+      justify-content: center;
+      align-items: center;
       flex-direction: row;
       position: relative;
   }
 
   .image-container{
-    flex-basis: 60%;
-    width: 15em;
-    height: auto;
+    width: 100%;
+    height: 240px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: row;
     position: relative;
@@ -112,18 +180,22 @@ body{
   .image{
       width: 15em;
       height: auto;
+      margin-right: 10px;
   }
 
   .avatar-container{
       display: flex;
+      flex-direction: column;
       justify-content: flex-start;
-      align-items: center;
+      align-items: flex-start;
+      justify-self: flex-start;
+      align-self: flex-start;
   }
 
   .avatar{
       width: 3em;
       height: auto;
-      transform: translateY(-6em);
+      cursor: pointer;
   }
 
   .input-container{
@@ -186,18 +258,21 @@ body{
       color: black;
       display: none;
       position: absolute;
-      transform: translate(10.5em, 1em);
+      transform: translate(20em, 1em);
       z-index: 10;
   }
 
   .speech2{
-    width: fit-content;
+    width: 10em;
+    justify-self: center;
+    margin: 5px;
+    align-self: center;
     background: white;
-    padding: 1em;
-    text-align: start;
+    padding: 5px;
+    text-align: center;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
     font-weight: 700;
     font-size: 1em;
     border-radius: .8em;
@@ -285,6 +360,7 @@ body{
       user-select: none;
       margin: .5em;
       right: 0%;
+      display: none;
   }
   .next:hover {
       background-color: rgba(0,0,0,0.8);
@@ -292,6 +368,7 @@ body{
 
   .pageNum-container{
       width: 100%;
+      margin: 1.5em;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -346,11 +423,16 @@ body{
 
   .popup-image{
     width: 8em;
+    margin: 5px;
     height: auto;
   }
 }
 @media only screen and (min-width:641px) and (orientation: landscape)  { 
   /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  .fa-arrow-left{
+    font-size: 1.2em;
+}
+
   .phoneText{
       font-size: 1em;
   }
@@ -359,6 +441,7 @@ body{
       font-size: 2.5em;
       padding: 30px;
       transform: translateY(0);
+      margin: 0;
   }  
 
   .slide{
@@ -367,15 +450,12 @@ body{
   }
 
   .image-container{
-      width: 20em;
+      width: 100%;
+      height: 280px;
   }
 
   .image{
       width: 17em;
-  }
-
-  .avatar-container{
-      transform: translateY(-1em);
   }
 
   .avatar{
@@ -417,7 +497,7 @@ body{
       padding: 1em;
       font-weight: 700;
       font-size: 1em;
-      transform: translate(11.5em, -2em);
+      transform: translate(22em, -1.5em);
   }
 
   .speech2{
@@ -458,6 +538,10 @@ body{
 }
 @media only screen and (min-width:961px)  { 
   /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+  .fa-arrow-left{
+    font-size: 1.6em;
+}
+
   .title{
       font-size: 3.5em;
       padding: 30px;
@@ -468,15 +552,12 @@ body{
   }
 
   .image-container{
-      width: 30em;
+      width: 100%;
+      height: 400px;
   }
 
   .image{
       width: 25em;
-  }
-
-  .avatar-container{
-      transform: translateY(-4em);
   }
 
   .avatar{
@@ -514,11 +595,11 @@ body{
       padding: 1em;
       font-weight: 700;
       font-size: 1.4em;
-      transform: translate(11em, 0em);
+      transform: translate(23em, -1em);
   }
 
   .speech2{
-    width: 14em;
+    width: 11em;
     padding: 1em;
     font-weight: 700;
     font-size: 1.4em;
@@ -559,12 +640,16 @@ body{
 }
 @media only screen and (min-width: 1025px) {
   /* big landscape tablets, laptops, and desktops */
+  .fa-arrow-left{
+    font-size: 1.8em;
+    }
   .slideshow-container{
     overflow-x: hidden;
   }
 
   .title{
       font-size: 3.5em;
+      text-decoration: none;
   }  
 
   .slide{
@@ -572,16 +657,14 @@ body{
   }
 
   .image-container{
-      width: 31em;
+      width: 100%;
+      height: 400px;
   }
 
   .image{
       width: 25em;
   }
 
-  .avatar-container{
-      transform: translateY(-4em);
-  }
 
   .avatar{
       width: 4em;
@@ -618,11 +701,11 @@ body{
       padding: 1em;
       font-weight: 700;
       font-size: 1.6em;
-      transform: translate(11em, .5em);
+      transform: translate(19.5em, -.5em);
   }
 
   .speech2{
-    width: 14em;
+    width: fit-content;
     padding: 1em;
     font-weight: 700;
     font-size: 1.6em;
@@ -675,7 +758,7 @@ body{
 
   
 }
-@media only screen and (min-width:1440px) { 
+@media only screen and (min-width:10000px) { 
   /* Large moniters */
   .title{
       font-size: 4em;
@@ -732,7 +815,7 @@ body{
       padding: 1em;
       font-weight: 700;
       font-size: 2em;
-      transform: translate(15em, -4em);      
+      transform: translate(15.5em, -4em);      
   }
     
   .arrow-container{

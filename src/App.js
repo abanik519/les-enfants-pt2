@@ -60,7 +60,12 @@ export class App extends Component {
       if(slideIndex == 1){
           document.getElementById("pageNum").innerHTML = "";
       }
-      //document.getElementById("n").style.display = "none";
+      if(n > 0){
+        document.getElementById("n").style.display = "none";
+      }
+      else{
+        document.getElementById("n").style.display = "block";
+      }
       if(slideIndex >= 3){
           document.getElementById("p").style.display = "block";
       }
@@ -157,64 +162,51 @@ export class App extends Component {
                     <div className="image-container">
                         <img className="image" src={image01}/>
                         <div className="avatar-container">
-                            <img className="avatar" src={avatar}/>
+                          <div className="flex-row">
+                            <img className="avatar" src={avatar} onClick={() => {this.toggle('intro'); this.hide('click1'); this.showNext()}}/>
+                            <i id="click1" class="fa fa-arrow-left">&larr;Click Here</i>
+                          </div>
                         </div>
                         <audio id="intro-sound">
                             <source src={introClip} type="audio/mpeg" />
                         </audio>
                         <div id="intro" className="speech sb1">
                             Aujourd’hui, tu vas lire l’histoire « Les enfants de cire. » Sélectionnez la flèche pour passer à la page suivante.
-                            <span className="success-checkmark" onClick={() => {this.showNext(); this.hide('intro');}}></span>
                         </div>
                     </div>
 
-                    <div className="input-container">
-                        <input className="input-box" placeholder="Enter Name"/>
-                        <input className="input-box" placeholder="Enter ID"/>
-                        <input className="input-box" placeholder="Enter RA Name"/>
-                        <input className="input-box" placeholder="Enter Date"/>
-                        <div className="begin-button" onClick={() => this.show('intro')}>Press To Begin</div>
-                    </div>
                 </div>
                 {/* Slide 1 */}
                 <div className="slide fade">
                     <div className="image-container">
                         <img className="image" src={image02}/>
                         <div className="avatar-container">
-                            <img className="avatar" src={avatar}/>
-                        </div>
-                    </div>
-
-
-                    <div className="text-container">
-                        <p>Il y a une famille bien heureuse. <span className="highlight" onClick={() => this.toggle('s1')}>Ils ne se disputent</span> jamais.</p>
-                        <div id="s1" className="speech2">
-                          ils se disputent signifie : ils se battent
-                          <img className="popup-image" src={s1}/>
-                          <div className='flex-start'>
-                            <span className="success-checkmark" onClick={() => {this.showNext(); this.hide('s1');}}></span>
+                          <div className="flex-row">
+                            <img className="avatar" src={avatar} onClick={() => {this.toggle('s1'); this.hide('click2'); this.showNext()}}/>
+                            <i id="click2" class="fa fa-arrow-left">&larr;Click Here</i>
+                          </div>
+                          <p>Il y a une famille bien heureuse. <span className="highlight">Ils ne se disputent</span> jamais.</p>
+                          <div id="s1" className="speech2">
+                            ils se battent
+                            <img className="popup-image" src={s1}/>
                           </div>
                         </div>
                     </div>
+
+
+
                 </div>
                 {/* Slide 2 */}
                 <div className="slide fade">
                     <div className="image-container">
                         <img className="image" src={image03}/>
                         <div className="avatar-container">
-                            <img className="avatar" src={avatar}/>
-                        </div>
-                    </div>
-
-
-                    <div className="text-container">
-                        <p>Ils aident leurs parents à la maison et dans <span className="highlight" onClick={() => this.toggle('s2')}>les champs.</span></p>
-                        <div id="s2" className="speech2">
-                          les champs signifie: un grand morceau de terre pour faire pousser des plantes <br/>
-                          <img className="popup-image" src={s2}/>
-                          <div className='flex-start'>
-                            <span className="success-checkmark" onClick={() => {this.showNext(); this.hide('s2');}}></span>
-                          </div>
+                            <img className="avatar" src={avatar} onClick={() => {this.showNext(); this.toggle('s2')}}/>
+                            <p>Ils aident leurs parents à la maison et dans <span className="highlight">les champs.</span></p>
+                            <div id="s2" className="speech2">
+                              un grand morceau de terre pour faire pousser des plantes <br/>
+                              <img className="popup-image" src={s2}/>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -223,20 +215,13 @@ export class App extends Component {
                     <div className="image-container">
                         <img className="image" src={image04}/>
                         <div className="avatar-container">
-                            <img className="avatar" src={avatar}/>
-                        </div>
-                    </div>
-
-
-                    <div className="text-container">
-                        <p>Mais ils n’ont pas le droit de <span className="highlight" onClick={() => this.toggle('s3')}>s’approcher</span> d’un feu.
-                        </p>
-                        <div id="s3" className="speech2">
-                          s’approcher signifie : aller plus près <br/>
-                          <img className="popup-image" src={s3}/>
-                          <div className='flex-start'>
-                            <span className="success-checkmark" onClick={() => {this.showNext(); this.hide('s3');}}></span>
-                          </div>
+                            <img className="avatar" src={avatar} onClick={() => {this.showNext(); this.toggle('s3')}}/>
+                            <p>Mais ils n’ont pas le droit de <span className="highlight">s’approcher</span> d’un feu.
+                            </p>
+                            <div id="s3" className="speech2">
+                              aller plus près <br/>
+                              <img className="popup-image" src={s3}/>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -245,20 +230,13 @@ export class App extends Component {
                     <div className="image-container">
                         <img className="image" src={image05}/>
                         <div className="avatar-container">
-                            <img className="avatar" src={avatar}/>
-                        </div>
-                    </div>
-
-
-                    <div className="text-container">
-                        <p>Ils doivent faire tout leur travail pendant la nuit. Puisqu’ils sont faits <span className="highlight" onClick={() => this.toggle('s4')}>de cire!</span> Mais un des garçons désire se promener au soleil.
-                        </p>
-                        <div id="s4" className="speech2">
-                          de cire signifie : une chandelle est faite de cire <br/>
-                          <img className="popup-image" src={s4}/>
-                          <div className='flex-start'>
-                            <span className="success-checkmark" onClick={() => {this.showNext(); this.hide('s4');}}></span>
-                          </div>
+                            <img className="avatar" src={avatar} onClick={() => {this.showNext(); this.toggle('s4')}}/>
+                            <p>Ils doivent faire tout leur travail pendant la nuit. Puisqu’ils sont faits <span className="highlight">de cire!</span> Mais un des garçons désire se promener au soleil.
+                            </p>
+                            <div id="s4" className="speech2">
+                              une chandelle est faite de cire <br/>
+                              <img className="popup-image" src={s4}/>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -267,20 +245,13 @@ export class App extends Component {
                     <div className="image-container">
                         <img className="image" src={image07}/>
                         <div className="avatar-container">
-                            <img className="avatar" src={avatar}/>
-                        </div>
-                    </div>
-
-
-                    <div className="text-container">
-                        <p>Un jour son désir est trop <span className="highlight" onClick={() => this.toggle('s5')}>puissant.</span> Ses frères l’avertissent… 
-                        </p>
-                        <div id="s5" className="speech2">
-                          puissant signifie: fort  <br/>
-                          <img className="popup-image" src={s5}/>
-                          <div className='flex-start'>
-                            <span className="success-checkmark" onClick={() => {this.showNext(); this.hide('s5');}}></span>
-                          </div>
+                            <img className="avatar" src={avatar} onClick={() => {this.showNext(); this.toggle('s5')}}/>
+                            <p>Un jour son désir est trop <span className="highlight">puissant.</span> Ses frères l’avertissent… 
+                            </p>
+                            <div id="s5" className="speech2">
+                              fort  <br/>
+                              <img className="popup-image" src={s5}/>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -289,20 +260,13 @@ export class App extends Component {
                     <div className="image-container">
                         <img className="image" src={image08}/>
                         <div className="avatar-container">
-                            <img className="avatar" src={avatar}/>
-                        </div>
-                    </div>
-
-
-                    <div className="text-container">
-                        <p>Mais c’est trop tard! Il fond au soleil <span className="highlight" onClick={() => this.toggle('s6')}>brûlant.</span>
-                        </p>
-                        <div id="s6" className="speech2">
-                          brûlant signifie: très chaud <br/>
-                          <img className="popup-image" src={s6}/>
-                          <div className='flex-start'>
-                            <span className="success-checkmark" onClick={() => {this.showNext(); this.hide('s6');}}></span>
-                          </div>
+                            <img className="avatar" src={avatar}  onClick={() => {this.showNext(); this.toggle('s6')}}/>
+                            <p>Mais c’est trop tard! Il fond au soleil <span className="highlight">brûlant.</span>
+                            </p>
+                            <div id="s6" className="speech2">
+                              très chaud <br/>
+                              <img className="popup-image" src={s6}/>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -311,20 +275,13 @@ export class App extends Component {
                     <div className="image-container">
                         <img className="image" src={image09}/>
                         <div className="avatar-container">
-                            <img className="avatar" src={avatar}/>
-                        </div>
-                    </div>
-
-
-                    <div className="text-container">
-                        <p>Les enfants de cire sont si tristes de voir leur frère <span className="highlight" onClick={() => this.toggle('s7')}>fondre.</span>
-                        </p>
-                        <div id="s7" className="speech2">
-                          fondre signifie: devenir  liquide <br/>
-                          <img className="popup-image" src={s7}/>
-                          <div className='flex-start'>
-                            <span className="success-checkmark" onClick={() => {this.showNext(); this.hide('s7');}}></span>
-                          </div>
+                            <img className="avatar" src={avatar} onClick={() => {this.showNext(); this.toggle('s7')}}/>
+                            <p>Les enfants de cire sont si tristes de voir leur frère <span className="highlight" >fondre.</span>
+                            </p>
+                            <div id="s7" className="speech2">
+                              devenir  liquide <br/>
+                              <img className="popup-image" src={s7}/>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -333,64 +290,45 @@ export class App extends Component {
                     <div className="image-container">
                         <img className="image" src={image10}/>
                         <div className="avatar-container">
-                            <img className="avatar" src={avatar}/>
+                            <img className="avatar" src={avatar} onClick={() => {this.showNext(); this.toggle('s8')}}/>
+                            <p>Mais ils font un plan. Ils <span className="highlight">façonnent</span> le morceau de cire fondue en oiseau.
+                            </p>
+                            <div id="s8" className="speech2">
+                              ils fabriquent <br/>
+                              <img className="popup-image" src={s8}/>
+                            </div>
                         </div>
                     </div>
 
-
-                    <div className="text-container">
-                        <p>Mais ils font un plan. Ils <span className="highlight" onClick={() => this.toggle('s8')}>façonnent</span> le morceau de cire fondue en oiseau.
-                        </p>
-                        <div id="s8" className="speech2">
-                          ils façonnent signifie: ils fabriquent <br/>
-                          <img className="popup-image" src={s8}/>
-                          <div className='flex-start'>
-                            <span className="success-checkmark" onClick={() => {this.showNext(); this.hide('s8');}}></span>
-                          </div>
-                        </div>
-                    </div>
                 </div>
                 {/* Slide 9 */}
                 <div className="slide fade">
                     <div className="image-container">
                         <img className="image" src={image11}/>
                         <div className="avatar-container">
-                            <img className="avatar" src={avatar}/>
+                            <img className="avatar" src={avatar} onClick={() => {this.showNext(); this.toggle('s9')}}/>
+                            <p>Ils apportent leur frère l’oiseau jusqu’<span className="highlight">au sommet d’</span>une montagne haute.
+                            </p>
+                            <div id="s9" className="speech2">
+                             en haut de <br/>
+                              <img className="popup-image" src={s9}/>
+                            </div>
                         </div>
                     </div>
 
-
-                    <div className="text-container">
-                        <p>Ils apportent leur frère l’oiseau jusqu’<span className="highlight" onClick={() => this.toggle('s9')}>au sommet d’</span>une montagne haute.
-                        </p>
-                        <div id="s9" className="speech2">
-                          au sommet de signifie : en haut de <br/>
-                          <img className="popup-image" src={s9}/>
-                          <div className='flex-start'>
-                            <span className="success-checkmark" onClick={() => {this.showNext(); this.hide('s9');}}></span>
-                          </div>
-                        </div>
-                    </div>
                 </div>
                 {/* Slide 10 */}
                 <div className="slide fade">
                     <div className="image-container">
                         <img className="image" src={image01}/>
                         <div className="avatar-container">
-                            <img className="avatar" src={avatar}/>
-                        </div>
-                    </div>
-
-
-                    <div className="text-container">
-                        <p>Et lorsque le soleil se lève, <span className="highlight" onClick={() => this.toggle('s10')}>il s’envole</span> vers la lumière du matin en chantant.
-                        </p>
-                        <div id="s10" className="speech2">
-                          il s’envole signifie: il prend son vol<br/>
-                          <img className="popup-image" src={s10}/>
-                          <div className='flex-start'>
-                            <span className="success-checkmark" onClick={() => {this.showNext(); this.hide('s10');}}></span>
-                          </div>
+                            <img className="avatar" src={avatar} onClick={() => {this.showNext(); this.toggle('s10')}}/>
+                            <p>Et lorsque le soleil se lève, <span className="highlight">il s’envole</span> vers la lumière du matin en chantant.
+                            </p>
+                            <div id="s10" className="speech2">
+                              il prend son vol<br/>
+                              <img className="popup-image" src={s10}/>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -492,7 +430,6 @@ export class App extends Component {
             <div className="pageNum-container">
                 <p id="pageNum"></p>
             </div>
-
         </div>
       </div>
     )
