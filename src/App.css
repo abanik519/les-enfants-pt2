@@ -295,6 +295,7 @@ body{
       display: flex;
       justify-content: center;
       align-items: center;
+      text-align: center;
   }
 
   .question-prompt-container{
@@ -628,16 +629,16 @@ body{
   }
 
   .sb1:before {
-      content: "";
-      width: 0px;
-      height: 0px;
-      position: absolute;
-      border-left: 20px solid transparent;
-      border-right: 20px solid white;
-      border-top: 20px solid white;
-      border-bottom: 20px solid transparent;
-      left: -19px;
-      top: 6px;
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 20px solid transparent;
+    border-right: 20px solid white;
+    border-top: 20px solid white;
+    border-bottom: 20px solid transparent;
+    left: -19px;
+    top: 6px;
   }
 
     

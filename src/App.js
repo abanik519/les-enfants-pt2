@@ -56,7 +56,7 @@ export class App extends Component {
   plusSlides(n) {
     if(document.getElementById("pageNum")){
       this.showSlides(slideIndex += n);  
-      document.getElementById("pageNum").innerHTML = "Page " + String(slideIndex-1);
+      document.getElementById("pageNum").innerHTML = String(slideIndex-1);
       if(slideIndex == 1){
           document.getElementById("pageNum").innerHTML = "";
       }
