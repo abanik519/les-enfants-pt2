@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/les-enfants-pt2/static/css/main.c3875201.css",
-    "main.js": "/les-enfants-pt2/static/js/main.d0047804.js",
+    "main.css": "/les-enfants-pt2/static/css/main.c6b8f6ec.css",
+    "main.js": "/les-enfants-pt2/static/js/main.fa76c088.js",
     "static/js/787.34730230.chunk.js": "/les-enfants-pt2/static/js/787.34730230.chunk.js",
     "static/media/Media1.mp3": "/les-enfants-pt2/static/media/Media1.c0ac306e091b0ea430ff.mp3",
     "static/media/Media2.mp3": "/les-enfants-pt2/static/media/Media2.6ec6573a36e50a51e0a7.mp3",
-    "static/media/COMIC.TTF": "/les-enfants-pt2/static/media/COMIC.cf3d8690bffa563fb10b.TTF",
+    "static/media/Century Gothic.ttf": "/les-enfants-pt2/static/media/Century Gothic.b194aa2bd524e2c973f7.ttf",
     "static/media/s2.jpg": "/les-enfants-pt2/static/media/s2.5528b7939d01524d4f44.jpg",
     "static/media/s8.jpg": "/les-enfants-pt2/static/media/s8.24f08614e3538e2a07ee.jpg",
     "static/media/s1.jpg": "/les-enfants-pt2/static/media/s1.d51660246c13e99f3d1f.jpg",
@@ -13,7 +13,6 @@
     "static/media/s7.jpg": "/les-enfants-pt2/static/media/s7.9f1065a6f71781706d82.jpg",
     "static/media/s9.jpg": "/les-enfants-pt2/static/media/s9.25e7353fde6c69c4f6d0.jpg",
     "static/media/s6.jpg": "/les-enfants-pt2/static/media/s6.661758c9d255d70e8474.jpg",
-    "static/media/s4.jpg": "/les-enfants-pt2/static/media/s4.5a0e7921855ca4530f14.jpg",
     "static/media/04.jpg": "/les-enfants-pt2/static/media/04.a62f625a6db35e2bd68d.jpg",
     "static/media/07.jpg": "/les-enfants-pt2/static/media/07.4a9fd178135b3f3e894c.jpg",
     "static/media/06.jpg": "/les-enfants-pt2/static/media/06.709a8f0a8e6023324a2c.jpg",
@@ -23,18 +22,19 @@
     "static/media/09.jpg": "/les-enfants-pt2/static/media/09.6c014bbd64dfe66b64c2.jpg",
     "static/media/01.jpg": "/les-enfants-pt2/static/media/01.4391e9c268949c33455f.jpg",
     "static/media/10.jpg": "/les-enfants-pt2/static/media/10.4f4bd544bc842bd50322.jpg",
-    "static/media/s5.jpg": "/les-enfants-pt2/static/media/s5.71547bda28e146259889.jpg",
     "static/media/03.jpg": "/les-enfants-pt2/static/media/03.195b6257a90902b605df.jpg",
     "static/media/11.jpg": "/les-enfants-pt2/static/media/11.627f3a9bc1b1ec56d49e.jpg",
     "static/media/05.jpg": "/les-enfants-pt2/static/media/05.29eaf0f8c5eff9b7de1d.jpg",
+    "static/media/s4.jpg": "/les-enfants-pt2/static/media/s4.a2eaa8aedf9f787320ea.jpg",
+    "static/media/s5.jpg": "/les-enfants-pt2/static/media/s5.125d91707f27d4b5804d.jpg",
     "static/media/08.jpg": "/les-enfants-pt2/static/media/08.e3d25ec68351dcddc621.jpg",
     "index.html": "/les-enfants-pt2/index.html",
-    "main.c3875201.css.map": "/les-enfants-pt2/static/css/main.c3875201.css.map",
-    "main.d0047804.js.map": "/les-enfants-pt2/static/js/main.d0047804.js.map",
+    "main.c6b8f6ec.css.map": "/les-enfants-pt2/static/css/main.c6b8f6ec.css.map",
+    "main.fa76c088.js.map": "/les-enfants-pt2/static/js/main.fa76c088.js.map",
     "787.34730230.chunk.js.map": "/les-enfants-pt2/static/js/787.34730230.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c3875201.css",
-    "static/js/main.d0047804.js"
+    "static/css/main.c6b8f6ec.css",
+    "static/js/main.fa76c088.js"
   ]
 }
